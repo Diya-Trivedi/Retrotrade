@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.UserDetailEntity;
 import com.grownited.entity.UserEntity;
+import com.grownited.repository.UserDetailRepository;
 import com.grownited.repository.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -18,6 +19,9 @@ public class SessionController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	UserDetailRepository userDetailRepository;
 	
 	
 	@GetMapping("/signup")
@@ -52,7 +56,7 @@ public class SessionController {
         }
 
         session.setAttribute("user", dbUser);
-        session.setAttribute("userId", dbUser.getUserid());
+        session.setAttribute("userId", dbUser.getUserId());
         session.setAttribute("role", dbUser.getRole());
 
         return "redirect:/dashboard";
@@ -89,7 +93,8 @@ public class SessionController {
 		// new -> x
 		
 		userRepository.save(userEntity);
-		
+		userDetailEntity.setUserId(userEntity.getUserId());//users insert  -> userId 
+		userDetailRepository.save(userDetailEntity);//
 		return "Login";
 	}
 	

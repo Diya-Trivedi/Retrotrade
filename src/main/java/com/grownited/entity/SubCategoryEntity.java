@@ -1,5 +1,6 @@
 package com.grownited.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,32 +9,37 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="sub_category")
+@Table(name="subcategory")
 public class SubCategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer subCategoryId;
-    private String subCategoryName;
-    private Integer CategoryId;
+    @Column(name = "subcategory_id")
+    private Integer subcategoryId;
+
+    @Column(name = "category_id")
+    private Integer categoryId;
+
+    @Column(name = "active")
     private Boolean active;
 
-    
+    @Column(name = "sub_category_name")
+    private String subCategoryName;
 
-	public Integer getSubCategoryId() {
-		return subCategoryId;
+	public Integer getSubcategoryId() {
+		return subcategoryId;
 	}
 
-	public void setSubCategoryId(Integer subCategoryId) {
-		this.subCategoryId = subCategoryId;
+	public void setSubcategoryId(Integer subcategoryId) {
+		this.subcategoryId = subcategoryId;
 	}
 
-	public String getSubCategoryName() {
-		return subCategoryName;
+	public Integer getCategoryId() {
+		return categoryId;
 	}
 
-	public void setSubCategoryName(String subCategoryName) {
-		this.subCategoryName = subCategoryName;
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public Boolean getActive() {
@@ -44,15 +50,14 @@ public class SubCategoryEntity {
 		this.active = active;
 	}
 
-	public Integer getCategoryId() {
-		return CategoryId;
+	public String getSubCategoryName() {
+		return subCategoryName;
 	}
 
-	public void setCategoryId(Integer categoryId) {
-		CategoryId = categoryId;
+	public void setSubCategoryName(String subCategoryName) {
+		this.subCategoryName = subCategoryName;
 	}
+}   
 
 	
     
-    
-}

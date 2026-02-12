@@ -61,6 +61,26 @@
                         <input type="password" name="password" class="form-control"
                                placeholder="Enter password" required>
                     </div>
+                    
+                    <!-- Gender -->
+                    <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <select name="gender" class="form-select" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    </select>
+                    </div>
+
+                    <!-- Birth Year -->
+                    <div class="mb-3">
+                    <label class="form-label">Birth Year</label>
+                    <input type="number" name="birthYear" class="form-control"
+                    placeholder="Enter birth year"
+                    min="1950" max="2025" required>
+                    </div>
+                    
 
                     <!-- Contact Number -->
                     <div class="mb-3">
@@ -90,11 +110,12 @@
                         <label class="form-label">Country</label>
                         <select name="country" class="form-select" required>
                             <option value="">Select country</option>
-                            <option value="1">India</option>
-                            <option value="2">USA</option>
-                            <option value="3">UK</option>
-                            <option value="4">Canada</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
                         </select>
+                        
                     </div>
 
                     <!-- Active -->
@@ -106,6 +127,19 @@
                             <option value="false">Inactive</option>
                         </select>
                     </div>
+                    
+                    <!-- Profile Picture -->
+                    <div class="mb-3">
+                    <label class="form-label">Profile Picture</label>
+                    <input type="file" name="profilePic"
+                    class="form-control"
+                    accept="image/*"
+                    required>
+                    <div class="form-text">
+                    Upload JPG, PNG or JPEG image
+                    </div>
+                    </div>
+                    
 
                     <!-- Submit -->
                     <div class="d-grid">
