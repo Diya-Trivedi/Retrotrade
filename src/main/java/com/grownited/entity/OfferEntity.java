@@ -14,11 +14,11 @@ import jakarta.persistence.Table;
 public class OfferEntity {
 
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)   
 	 private Integer offer_id;
-	 private Integer listing_id;
+	 private Integer listing_id;   
 	 private Integer buyer_id;
-	 private BigDecimal offered_price;
+	 private BigDecimal offered_price;   
 	 private String offer_status;
 	 private LocalDate created_at;
 	 public Integer getOffer_id() {

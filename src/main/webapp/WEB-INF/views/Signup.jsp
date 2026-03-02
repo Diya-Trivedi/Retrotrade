@@ -32,7 +32,7 @@
             <div class="card signup-card shadow p-4">
                 <h3 class="text-center mb-4">Create Account</h3>
 
-                <form action="register" method="post">
+                <form action="register" method="post" enctype="multipart/form-data">
 
                     <!-- First Name -->
                     <div class="mb-3">
@@ -131,12 +131,8 @@
                     <!-- Profile Picture -->
                     <div class="mb-3">
                     <label class="form-label">Profile Picture</label>
-                    <input type="file" name="profilePic"
-                    class="form-control"
-                    accept="image/*"
-                    required>
-                    <div class="form-text">
-                    Upload JPG, PNG or JPEG image
+                    <input type="file" name="profilePic" class="form-control" required>
+                    
                     </div>
                     </div>
                     

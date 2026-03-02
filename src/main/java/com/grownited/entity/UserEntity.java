@@ -18,7 +18,7 @@ public class UserEntity {
     private String firstName;
     private String lastName;
     private String email;
-    private Integer password;
+    private String password;
     private LocalDateTime createdAt;
     private String role;
     private String gender;
@@ -63,10 +63,11 @@ public class UserEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getPassword() {
+	
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(Integer password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	public LocalDateTime getCreatedAt() {

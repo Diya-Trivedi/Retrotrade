@@ -1,79 +1,106 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #1cc88a, #4e73df);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .login-card {
-            border-radius: 15px;
-        }
-    </style>
+    <title>SB Admin 2 - Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
-            <div class="card login-card shadow p-4">
-                <h3 class="text-center mb-4">Login</h3>
+<body class="bg-gradient-primary">
 
-                <form action="login" method="post">
+<div class="container d-flex align-items-center justify-content-center" style="min-height:100vh;">
 
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control"
-                               placeholder="Enter your email" required>
+    <div class="col-xl-5 col-lg-6 col-md-8">
+
+        <div class="card shadow-lg border-0">
+            <div class="card-body p-5 text-center">
+
+                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+
+                <form class="user" action="authenticate" method="post">
+
+                    <div class="form-group">
+                        <input type="email" name="email"
+                               class="form-control form-control-user"
+                               placeholder="Enter Email Address...">
                     </div>
 
-                    <!-- Password -->
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control"
-                               placeholder="Enter your password" required>
+                    <div class="form-group">
+                        <input type="password" name="password"
+                               class="form-control form-control-user"
+                               placeholder="Password">
                     </div>
 
-                    <!-- Login Button -->
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-success">Login</button>
+                    <div class="form-group text-left">
+                        <div class="custom-control custom-checkbox small">
+                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                            <label class="custom-control-label" for="customCheck">
+                                Remember Me
+                            </label>
+                        </div>
                     </div>
 
-                    <!-- Extra Links -->
-                    <div class="text-center mt-3">
-                        <span>Don't have an account?</span>
-                        <a href="signup">Sign Up</a>
-                    </div>
-                    
-                    <div class="text-center mt-3">
-                        
-                        Forget password?
-                        <a href="forgetpassword">Click Here</a>
-                    </div>
-                    
-                   
+                    <button class="btn btn-primary btn-user btn-block">
+                        Login
+                    </button>
+
+                    <hr>
+
                     
 
                 </form>
+
+                <hr>
+
+                <div class="text-center">
+                    <a class="small" href="forgetpassword">Forgot Password?</a>
+                </div>
+
+                <div class="text-center">
+                Don't have an account?
+                    <a class="small" href="signup">Create an Account!</a>
+                </div>
+                <br>
+                <span class="text-danger">${error}</span>
+                
             </div>
         </div>
+
     </div>
+
 </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+
 </html>

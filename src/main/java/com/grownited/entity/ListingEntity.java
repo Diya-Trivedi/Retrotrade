@@ -71,8 +71,7 @@ public class ListingEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
+		
 	public LocalDate getCreated_at() {
 		return created_at;
 	}
@@ -109,7 +108,7 @@ public class ListingEntity {
 	public void setNegotiable(Boolean negotiable) {
 		this.negotiable = negotiable;
 	}
-    
+	
 }
 
     

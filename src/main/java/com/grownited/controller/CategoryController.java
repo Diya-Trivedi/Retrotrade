@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.CategoryEntity;
+import com.grownited.entity.ListingEntity;
+import com.grownited.entity.SubCategoryEntity;
 import com.grownited.repository.CategoryRepository;
 
 
@@ -26,9 +28,12 @@ public class CategoryController {
 	}
 
 	@PostMapping("saveCategory")
-	public String saveCategory(CategoryEntity categoryEntity) {  
+	public String saveCategory(CategoryEntity categoryEntity,ListingEntity listingEntity,SubCategoryEntity subCategoryEntity) {  
 
 		categoryEntity.setActive(true);
+		subCategoryEntity.setCategoryId(categoryEntity.getCategoryId());
+	    listingEntity.setCategoryId(categoryEntity.getCategoryId());
+	   
 		//insert 
 		categoryRepository.save(categoryEntity); 
 		return "AdminDashboard";

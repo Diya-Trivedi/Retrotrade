@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.CategoryEntity;
+import com.grownited.entity.ListingEntity;
 import com.grownited.entity.SubCategoryEntity;
+import com.grownited.repository.CategoryRepository;
 import com.grownited.repository.SubCategoryRepository;
 
 
@@ -19,15 +22,24 @@ public class SubCategoryController {
     
     @Autowired
     SubCategoryRepository subCategoryRepository;
+    
+    @Autowired
+    CategoryRepository categoryRepository;
 
     @GetMapping("newSubCategory")
-    public String newSubCategory() {
+    public String newSubCategory(Model model) {
+    	List<CategoryEntity> categoryList = categoryRepository.findAll();
+		model.addAttribute("categoryList", categoryList);
+    	
         return "NewSubCategory";
     }
 
     @PostMapping("saveSubCategory")
-    public String saveSubCategory(SubCategoryEntity subCategoryEntity){ 
-
+    public String saveSubCategory(SubCategoryEntity subCategoryEntity,CategoryEntity categoryEntity){ 
+   
+		
+    	subCategoryEntity.setCategoryId(categoryEntity.getCategoryId());
+    	subCategoryEntity.setActive(true);
     	subCategoryRepository.save(subCategoryEntity);
         return "redirect:/listSubCategory";
     }
